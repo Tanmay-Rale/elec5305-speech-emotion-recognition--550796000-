@@ -1,0 +1,16 @@
+Rank,StaticColumn,Feature,Family
+1,432,spectralSlope_std,spectral
+2,274,gtccDelta_03_q25,cepstral
+3,8,mfcc_02_median,cepstral
+4,163,mfccDeltaDelta_07_median,cepstral
+5,191,mfccDeltaDelta_13_mean,cepstral
+6,383,gtccDeltaDelta_12_median,cepstral
+7,217,gtcc_05_std,cepstral
+8,66,mfccDelta_01_mean,cepstral
+9,176,mfccDeltaDelta_10_mean,cepstral
+10,337,gtccDeltaDelta_03_std,cepstral
+11,94,mfccDelta_06_q25,cepstral
+12,387,gtccDeltaDelta_13_std,cepstral
+13,330,gtccDeltaDelta_01_q75,cepstral
+14,234,gtcc_08_q25,cepstral
+15,5,mfcc_01_q75,cepstral

@@ -1,0 +1,53 @@
+ELEC5305 FINAL PROJECT - STATIC SOURCE QA
+
+MATLAB files: 38
+Total files: 54
+Source/packaging issues found: 0
+
+PASS: all primary MATLAB function names match filenames.
+PASS: all START_HERE menu targets are present.
+PASS: documentation code fences are balanced.
+PASS: no hard-coded C:\Users\007ta path remains.
+PASS: final assessment/report/video/GitHub documentation is present.
+
+IMPORTANT: MATLAB runtime syntax and toolbox behavior must be verified by Options 14 and 15 inside MATLAB R2026a.
+
+MATLAB FILE INVENTORY:
+START_HERE.m | lines=114 | primary=START_HERE
+config/defaultConfig.m | lines=51 | primary=defaultConfig
+configureRavdessRoot.m | lines=46 | primary=configureRavdessRoot
+core/applyFrameNormalizer.m | lines=4 | primary=applyFrameNormalizer
+core/buildFeatureCache.m | lines=31 | primary=buildFeatureCache
+core/buildFeatureExtractor.m | lines=16 | primary=buildFeatureExtractor
+core/checkEnvironment2.m | lines=41 | primary=checkEnvironment2
+core/classificationScoresToMatrix.m | lines=24 | primary=classificationScoresToMatrix
+core/computeMetrics2.m | lines=26 | primary=computeMetrics2
+core/extractFrameFeatures2.m | lines=17 | primary=extractFrameFeatures2
+core/findRavdessWavs.m | lines=22 | primary=findRavdessWavs
+core/fitFrameNormalizer.m | lines=9 | primary=fitFrameNormalizer
+core/getFrameFeatureMetadata.m | lines=24 | primary=getFrameFeatureMetadata
+core/loadFeatureCache.m | lines=19 | primary=loadFeatureCache
+core/parseRavdessFilename.m | lines=26 | primary=parseRavdessFilename
+core/prepareRavdessManifest.m | lines=47 | primary=prepareRavdessManifest
+core/preprocessAudio.m | lines=16 | primary=preprocessAudio
+core/requireProjectDirs.m | lines=7 | primary=requireProjectDirs
+core/safePitchTrack.m | lines=14 | primary=safePitchTrack
+core/sfsCriterionSVM.m | lines=10 | primary=sfsCriterionSVM
+core/summarizeStaticFeatures.m | lines=18 | primary=summarizeStaticFeatures
+core/windowSequences.m | lines=26 | primary=windowSequences
+startup_affectx2.m | lines=10 | primary=startup_affectx2
+submission/exportSubmissionEvidence.m | lines=50 | primary=exportSubmissionEvidence
+tests/generateMockRavdessDataset.m | lines=35 | primary=generateMockRavdessDataset
+tests/runFullRuntimeValidation.m | lines=90 | primary=runFullRuntimeValidation
+tests/runStaticProjectAudit.m | lines=85 | primary=runStaticProjectAudit
+tests/selfTestAffectX2.m | lines=38 | primary=selfTestAffectX2
+training/runAcousticCueAnalysis2.m | lines=26 | primary=runAcousticCueAnalysis2
+training/runFeatureFamilyExperiments2.m | lines=28 | primary=runFeatureFamilyExperiments2
+training/runFullLOSOSVM2.m | lines=35 | primary=runFullLOSOSVM2
+training/runIntensityGeneralization2.m | lines=46 | primary=runIntensityGeneralization2
+training/runNestedSpeakerSFS.m | lines=56 | primary=runNestedSpeakerSFS
+training/runTemporalOrderAblation2.m | lines=38 | primary=runTemporalOrderAblation2
+training/trainSelectedBiLSTM.m | lines=60 | primary=trainSelectedBiLSTM
+training/trainSelectedSVM.m | lines=39 | primary=trainSelectedSVM
+ui/affectx2_dashboard.m | lines=802 | primary=affectx2_dashboard
+ui/signal_lab2.m | lines=40 | primary=signal_lab2

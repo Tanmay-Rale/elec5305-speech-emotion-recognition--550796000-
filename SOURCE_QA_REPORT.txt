@@ -1,0 +1,91 @@
+AFFECT-X 2.0 QA-REPAIRED BUILD — SOURCE AUDIT
+Generated: 2026-10-30T03:08:31
+
+SCOPE
+This report records static/source-level checks performed in the current execution environment.
+MATLAB itself is not installed in this environment, so true MATLAB runtime execution is NOT claimed here.
+A full MATLAB runtime harness is included as tests/runFullRuntimeValidation.m and menu Option 15.
+
+INVENTORY
+MATLAB files: 37
+Markdown files: 5
+Text files: 6
+
+STATIC CHECKS
+Primary function filename matching: PASS
+Unresolved internal project references: 0
+Document syntax/local-link issues: 0
+Unsafe evaluative menu input pattern present: False
+Hard-coded prior user path present: False
+Dashboard mislabeled probability pattern present: False
+RAVDESS audio-only speech filename combinatorics (1440): PASS
+
+CONFIRMED REPAIRS
+- Safe string-based START_HERE menu input; arbitrary MATLAB expressions are not evaluated.
+- Dataset readiness now counts valid RAVDESS WAV files instead of treating an empty folder as ready.
+- configureRavdessRoot persists the real dataset location in data/ravdess_root.txt.
+- Input data directory is no longer silently created as proof of dataset availability.
+- RAVDESS filename codes and neutral-intensity constraint are validated.
+- Feature cache includes a version signature and rebuilds when incompatible.
+- Frame extraction pads very short signals and validates feature metadata length.
+- Robust pitch helper removes invalid estimates and is shared by analysis/UI.
+- Metrics implementation no longer relies on fragile categorical confusion-matrix construction.
+- SFS grouped partitions are explicitly checked for actor leakage.
+- Feature-family experiment now uses validation actors 17–18, preserving final actors 19–24.
+- LOSO applies fold-local variance filtering before MRMR.
+- BiLSTM score output is normalized defensively whether classify returns numeric or cell scores.
+- Temporal ablation uses the sequence length/overlap stored with the trained BiLSTM.
+- SVM dashboard uses actual model class ordering and labels softmax-normalized ECOC scores as display scores, not calibrated probabilities.
+- Full synthetic runtime-validation suite added; it isolates all generated files under validation_sandbox.
+
+MATLAB API VERIFICATION
+- audioFeatureExtractor configured features verified against MathWorks documentation.
+- info(audioFeatureExtractor) / FeatureVectorLength mapping verified.
+- cvpartition(...,GroupingVariables=...) supported since R2025a; compatible with user R2026a.
+- sequentialfs custom criterion, CV object, and NFeatures usage verified.
+- ClassificationECOC/predict second output verified as class-wise negated average binary loss.
+- checkcode structured output verified for the MATLAB-side audit harness.
+- trainNetwork/classify remain supported in R2026a although MathWorks recommends newer dlnetwork/trainnet workflows.
+
+FILE-BY-FILE STATIC STATUS
+PASS   |   85 lines | START_HERE.m | primary function: START_HERE
+PASS   |   51 lines | config/defaultConfig.m | primary function: defaultConfig
+PASS   |   46 lines | configureRavdessRoot.m | primary function: configureRavdessRoot
+PASS   |    4 lines | core/applyFrameNormalizer.m | primary function: applyFrameNormalizer
+PASS   |   31 lines | core/buildFeatureCache.m | primary function: buildFeatureCache
+PASS   |   16 lines | core/buildFeatureExtractor.m | primary function: buildFeatureExtractor
+PASS   |   41 lines | core/checkEnvironment2.m | primary function: checkEnvironment2
+PASS   |   24 lines | core/classificationScoresToMatrix.m | primary function: classificationScoresToMatrix
+PASS   |   26 lines | core/computeMetrics2.m | primary function: computeMetrics2
+PASS   |   17 lines | core/extractFrameFeatures2.m | primary function: extractFrameFeatures2
+PASS   |   22 lines | core/findRavdessWavs.m | primary function: findRavdessWavs
+PASS   |    9 lines | core/fitFrameNormalizer.m | primary function: fitFrameNormalizer
+PASS   |   24 lines | core/getFrameFeatureMetadata.m | primary function: getFrameFeatureMetadata
+PASS   |   19 lines | core/loadFeatureCache.m | primary function: loadFeatureCache
+PASS   |   26 lines | core/parseRavdessFilename.m | primary function: parseRavdessFilename
+PASS   |   47 lines | core/prepareRavdessManifest.m | primary function: prepareRavdessManifest
+PASS   |   16 lines | core/preprocessAudio.m | primary function: preprocessAudio
+PASS   |    7 lines | core/requireProjectDirs.m | primary function: requireProjectDirs
+PASS   |   14 lines | core/safePitchTrack.m | primary function: safePitchTrack
+PASS   |   10 lines | core/sfsCriterionSVM.m | primary function: sfsCriterionSVM
+PASS   |   18 lines | core/summarizeStaticFeatures.m | primary function: summarizeStaticFeatures
+PASS   |   26 lines | core/windowSequences.m | primary function: windowSequences
+PASS   |    9 lines | startup_affectx2.m | primary function: startup_affectx2
+PASS   |   35 lines | tests/generateMockRavdessDataset.m | primary function: generateMockRavdessDataset
+PASS   |   90 lines | tests/runFullRuntimeValidation.m | primary function: runFullRuntimeValidation
+PASS   |   45 lines | tests/runStaticProjectAudit.m | primary function: runStaticProjectAudit
+PASS   |   38 lines | tests/selfTestAffectX2.m | primary function: selfTestAffectX2
+PASS   |   26 lines | training/runAcousticCueAnalysis2.m | primary function: runAcousticCueAnalysis2
+PASS   |   28 lines | training/runFeatureFamilyExperiments2.m | primary function: runFeatureFamilyExperiments2
+PASS   |   35 lines | training/runFullLOSOSVM2.m | primary function: runFullLOSOSVM2
+PASS   |   46 lines | training/runIntensityGeneralization2.m | primary function: runIntensityGeneralization2
+PASS   |   56 lines | training/runNestedSpeakerSFS.m | primary function: runNestedSpeakerSFS
+PASS   |   38 lines | training/runTemporalOrderAblation2.m | primary function: runTemporalOrderAblation2
+PASS   |   60 lines | training/trainSelectedBiLSTM.m | primary function: trainSelectedBiLSTM
+PASS   |   39 lines | training/trainSelectedSVM.m | primary function: trainSelectedSVM
+PASS   |  155 lines | ui/affectx2_dashboard.m | primary function: affectx2_dashboard
+PASS   |   40 lines | ui/signal_lab2.m | primary function: signal_lab2
+
+RUNTIME CERTIFICATION
+To claim true end-to-end runtime PASS, run START_HERE -> Option 15 in MATLAB R2026a.
+The harness reports each module independently and writes validation_sandbox/FULL_RUNTIME_VALIDATION_REPORT.txt.

@@ -1,0 +1,7 @@
+ELEC5305 FINAL PROJECT
+
+Speaker-Independent Speech Emotion Recognition:
+Acoustic Cues, Emotional Intensity and Temporal Structure
+
+MATLAB implementation using RAVDESS acoustic features,
+speaker-aware sequential feature selection, SVM and BiLSTM networks.
