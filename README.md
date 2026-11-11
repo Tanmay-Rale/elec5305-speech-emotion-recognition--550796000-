@@ -134,3 +134,4 @@ See:
 ## MathWorks technical reference
 
 The implementation is informed by the MathWorks Speech Emotion Recognition / Sequential Feature Selection example, but the project contribution is the speaker-grouped feature-selection and evaluation design plus the intensity and temporal experiments.
+project video link- https://www.youtube.com/watch?v=c8oInQ8WRNg
