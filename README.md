@@ -3,7 +3,7 @@
 ## Speaker-Independent Speech Emotion Recognition: Acoustic Cues, Emotional Intensity and Temporal Structure
 
 **MATLAB implementation using RAVDESS acoustic features, speaker-aware sequential feature selection, SVM and BiLSTM networks.**
-
+project video link- https://www.youtube.com/watch?v=c8oInQ8WRNg
 ## Single research question
 
 **Which acoustic and temporal speech features provide the most reliable emotion recognition for previously unseen speakers, and how does emotional intensity affect that generalisation?**
@@ -134,4 +134,4 @@ See:
 ## MathWorks technical reference
 
 The implementation is informed by the MathWorks Speech Emotion Recognition / Sequential Feature Selection example, but the project contribution is the speaker-grouped feature-selection and evaluation design plus the intensity and temporal experiments.
-project video link- https://www.youtube.com/watch?v=c8oInQ8WRNg
+
